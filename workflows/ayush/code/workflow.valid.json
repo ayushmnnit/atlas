@@ -55,7 +55,9 @@
         },
         "properties" : {
           "interim" : false,
-          "cache" : false
+          "cache" : false,
+          "id" : "2753",
+          "version" : 0
         }
       },
       "Filter0" : {
@@ -71,7 +73,11 @@
         },
         "properties" : {
           "interim" : false,
-          "cache" : false
+          "cache" : false,
+          "condition" : {
+            "format" : "sql",
+            "expr" : "age > 20"
+          }
         }
       },
       "Target0" : {
@@ -87,7 +93,9 @@
         },
         "properties" : {
           "interim" : false,
-          "cache" : false
+          "cache" : false,
+          "id" : "2754",
+          "version" : 0
         }
       }
     }

@@ -1,12 +1,49 @@
 {
+  "resolvers" : [ ],
   "graph" : {
+    "metainfo" : {
+      "cluster" : "local",
+      "id" : "ayush",
+      "memory" : 1,
+      "mode" : "batch",
+      "processors" : 1,
+      "language" : "scala",
+      "imported" : true,
+      "interimMode" : "full",
+      "codeMode" : "sparse",
+      "buildSystem" : "maven"
+    },
+    "connections" : [ {
+      "metadata" : {
+        "route" : "e_Hy5O_tusu"
+      },
+      "src" : {
+        "port" : "out",
+        "process" : "csv_source"
+      },
+      "tgt" : {
+        "port" : "in",
+        "process" : "Filter0"
+      }
+    }, {
+      "metadata" : {
+        "route" : "e_r1ytuKOjd"
+      },
+      "src" : {
+        "port" : "out",
+        "process" : "Filter0"
+      },
+      "tgt" : {
+        "port" : "in",
+        "process" : "Target0"
+      }
+    } ],
+    "groups" : [ ],
+    "inports" : { },
+    "outports" : { },
     "processes" : {
       "csv_source" : {
         "component" : "Source",
-        "properties" : {
-          "interim" : false,
-          "cache" : false
-        },
         "metadata" : {
           "label" : "csv source",
           "x" : 147,
@@ -16,14 +53,15 @@
           "inputs" : [ ],
           "outputs" : [ "out" ]
         },
-        "lineage" : ""
+        "properties" : {
+          "interim" : false,
+          "cache" : false,
+          "id" : "2753",
+          "version" : 0
+        }
       },
       "Filter0" : {
         "component" : "Filter",
-        "properties" : {
-          "interim" : false,
-          "cache" : false
-        },
         "metadata" : {
           "label" : "Filter0",
           "x" : 485,
@@ -33,14 +71,17 @@
           "inputs" : [ "in" ],
           "outputs" : [ "out" ]
         },
-        "lineage" : ""
+        "properties" : {
+          "interim" : false,
+          "cache" : false,
+          "condition" : {
+            "format" : "sql",
+            "expr" : "age > 20"
+          }
+        }
       },
       "Target0" : {
         "component" : "Target",
-        "properties" : {
-          "interim" : false,
-          "cache" : false
-        },
         "metadata" : {
           "label" : "Target0",
           "x" : 853,
@@ -50,55 +91,13 @@
           "inputs" : [ "in" ],
           "outputs" : [ ]
         },
-        "lineage" : ""
+        "properties" : {
+          "interim" : false,
+          "cache" : false,
+          "id" : "2754",
+          "version" : 0
+        }
       }
-    },
-    "connections" : [ {
-      "src" : {
-        "process" : "csv_source",
-        "port" : "out"
-      },
-      "tgt" : {
-        "process" : "Filter0",
-        "port" : "in"
-      },
-      "metadata" : {
-        "route" : "e_Hy5O_tusu"
-      },
-      "lineage" : ""
-    }, {
-      "src" : {
-        "process" : "Filter0",
-        "port" : "out"
-      },
-      "tgt" : {
-        "process" : "Target0",
-        "port" : "in"
-      },
-      "metadata" : {
-        "route" : "e_r1ytuKOjd"
-      },
-      "lineage" : ""
-    } ],
-    "groups" : [ ],
-    "locked" : false,
-    "metainfo" : {
-      "lastUpdated" : 1623918761227,
-      "id" : "ayush",
-      "memory" : 1,
-      "imported" : true,
-      "language" : "scala",
-      "processors" : 1,
-      "cluster" : "local",
-      "mode" : "batch",
-      "interimMode" : "full",
-      "udfs" : null,
-      "codeMode" : "sparse",
-      "buildSystem" : "maven",
-      "udafs" : null,
-      "sparkOptions" : null
-    },
-    "inports" : { },
-    "outports" : { }
+    }
   }
 }
