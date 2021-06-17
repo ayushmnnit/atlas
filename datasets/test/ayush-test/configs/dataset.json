@@ -1,0 +1,44 @@
+{
+  "datasetId" : "2753",
+  "schema" : {
+    "type" : "struct",
+    "fields" : [ {
+      "name" : "column",
+      "type" : "string",
+      "nullable" : true,
+      "metadata" : { }
+    }, {
+      "name" : "column0",
+      "type" : "string",
+      "nullable" : true,
+      "metadata" : { }
+    } ]
+  },
+  "datasetType" : "TestData",
+  "description" : "",
+  "commonProperties" : {
+    "properties" : {
+      "testData" : {
+        "data" : [ [ "name", "age" ], [ "ayush", "21" ], [ "aditya", "30" ], [ "raj", "35" ], [ "arushi", "18" ] ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "column",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : { }
+          }, {
+            "name" : "column0",
+            "type" : "string",
+            "nullable" : true,
+            "metadata" : { }
+          } ]
+        }
+      }
+    }
+  },
+  "dataFormat" : "custom",
+  "inputProperties" : {
+    "properties" : { }
+  }
+}
